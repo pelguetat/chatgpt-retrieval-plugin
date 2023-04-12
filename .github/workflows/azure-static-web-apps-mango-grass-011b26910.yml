@@ -9,9 +9,7 @@ on:
     branches:
       - main
 
-env:
-     # set this to the path to your function app project, defaults to the repository root
-  PYTHON_VERSION: '3.10'                     # set this to the python version to use (e.g. '3.6', '3.7', '3.8')
+
   
 jobs:
   build_and_deploy_job:
@@ -34,6 +32,8 @@ jobs:
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
+        env:
+          PYTHON_VERSION: '3.10'                     # set this to the python version to use (e.g. '3.6', '3.7', '3.8')
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
